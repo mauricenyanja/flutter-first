@@ -34,5 +34,7 @@ class DataStorage {
       (index) => jsonEncode(todos[index].toEncryptJson(encrypter, iv)),
     );
     //wrtitn to the file
+    todoStorage.writeAsStringSync('{"todos}:$encryptedTodos');
   }
+  //loading todo
 }
