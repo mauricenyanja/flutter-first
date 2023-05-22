@@ -21,11 +21,18 @@ class DataStorage {
 
   File todoStorage = File("");
 
-   Future _loadTodoFile() async {
+  Future _loadTodoFile() async {
     todoStorage = File(
       "${(await getApplicationDocumentsDirectory()).path}/todos.json",
     );
   }
 
-  
+  Future<void> saveTodos(List<ToDo> todos) async {
+    //list for all todos to save them
+    List<String> encryptedTodos = List.generate(
+      todos.length,
+      (index) => jsonEncode(todos[index].toEncryptJson(encrypter, iv)),
+    );
+    //wrtitn to the file
+  }
 }
