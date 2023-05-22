@@ -12,3 +12,16 @@ class ToDo {
     required this.completed,
     required this.from,
   });
+
+  Map<String, dynamic> toEncryptJson(Encrypter encrypter, IV iv) {
+    return {
+      "title": encrypter.encrypt(title, iv: iv).base64,
+      "content": encrypter.encrypt(content, iv: iv).base64,
+      "completed": completed,
+      "from": encrypter
+          .encrypt(from.millisecondsSinceEpoch.toString(), iv: iv)
+          .base64,
+    };
+  }
+  
+}
