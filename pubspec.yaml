@@ -38,6 +38,7 @@ dependencies:
   encrypt: ^5.0.1
   dynamic_color: ^1.6.5
   flutter_slidable: ^3.0.0
+  path_provider: ^2.0.15
 
 dev_dependencies:
   flutter_test:
