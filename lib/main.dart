@@ -9,11 +9,11 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   static final defaultLightColorScheme = ColorScheme.fromSeed(
-    seedColor: Colors.deepPurple,
+    seedColor: const Color.fromARGB(255, 183, 58, 89),
   );
 
   static final defaultDarkColorScheme = ColorScheme.fromSeed(
-    seedColor: Colors.deepPurple,
+    seedColor: const Color.fromARGB(255, 183, 58, 89),
     brightness: Brightness.dark,
   );
 
